@@ -2,6 +2,8 @@
 
 Hosted at https://og.maximilianschmitt.me
 
+Read the blog post: https://maximilianschmitt.me/posts/generate-social-media-preview-images/
+
 ## Usage
 
 In JavaScript:
