@@ -34,7 +34,6 @@ class OGImageServer {
                             #og-image {
                                 width: 1200px;
                                 height: 630px;
-                                border: 2px solid black;
                                 color: black;
                                 font-size: 72px;
                                 padding: 0 50px;
