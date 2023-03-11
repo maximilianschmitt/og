@@ -63,9 +63,6 @@ class OGImageServer {
                         <meta charset="UTF-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-                        <link rel="preconnect" href="https://fonts.googleapis.com">
-                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
                         <title>${text}</title>
                         <style>
                             * {
@@ -75,7 +72,6 @@ class OGImageServer {
                             }
 
                             body {
-                              font-family: 'Inter', sans-serif;
                               -webkit-font-smoothing: antialiased;
                               -moz-osx-font-smoothing: antialiased;
                               font-smoothing: antialiased;
@@ -92,21 +88,22 @@ class OGImageServer {
                                 align-items: center;
                                 justify-content: center;
                                 text-align: center;
-                                font-weight: 400;
+                                font-weight: bold;
+                                font-family: 'Helvetica Neue', Helvetica, sans-serif, Arial;
                                 flex-direction: column;
                             }
 
                             .logo {
                               color: rgba(255, 255, 255, 0.6);
                               font-size: 36px;
-                              margin-bottom: 0.5em;
                             }
                         </style>
                     </head>
                     <body>
                         <div id="og-image">
-                          <span class="logo">Max Schmitt</span>
-                          ${text}
+                          <span class="logo" style="margin-bottom: 1em;">Max Schmitt</span>
+                          <span style="padding-bottom: 0.25em;">${text}</span>
+                          <span class="logo" style="margin-top: 1em;">&nbsp;</span>
                         </div>
                     </body>
                 </html>
