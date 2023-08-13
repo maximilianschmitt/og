@@ -114,9 +114,7 @@ class OGImageServer {
 			try {
 				const { text } = req.params
 
-				const image = await this.getOGImageForText(text)
-
-				res.send(image)
+				return res.redirect(`https://maxschmitt.me/api/og?title=${encodeURIComponent(text)}`)
 			} catch (err) {
 				next(err)
 			}
@@ -126,9 +124,7 @@ class OGImageServer {
 			try {
 				const { text } = req.params
 
-				const image = await this.getOGImageForText(text, '/v2')
-
-				res.send(image)
+				return res.redirect(`https://maxschmitt.me/api/og?title=${encodeURIComponent(text)}`)
 			} catch (err) {
 				next(err)
 			}
