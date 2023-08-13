@@ -1,18 +1,14 @@
-const puppeteer = require('puppeteer')
 const express = require('express')
 
 class OGImageServer {
 	constructor({ port }) {
 		this.port = port
-		this.browser = null
 		this.app = express()
 		this.server = null
 		this.port = port
 	}
 
 	async start() {
-		this.browser = await puppeteer.launch()
-
 		this.app.get('/og-image', (req, res, next) => {
 			const { text } = req.query
 
@@ -143,23 +139,11 @@ class OGImageServer {
 		console.log(`OG Image Server listening on port ${this.port}`)
 	}
 
-	async getOGImageForText(text, mod = '') {
-		const urlencodedText = encodeURIComponent(text)
-		const page = await this.browser.newPage()
-		await page.goto(`http://localhost:${this.port}${mod}/og-image?text=${urlencodedText}`)
-		const ogImageElement = await page.$('#og-image')
-		const image = await ogImageElement.screenshot()
-		await page.close()
-		return image
-	}
-
 	async stop() {
-		await this.browser.close()
 		this.server.close()
 
 		this.app = null
 		this.server = null
-		this.browser = null
 	}
 }
 
